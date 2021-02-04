@@ -2,7 +2,7 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-04T12:54:45.645Z
+date: 2021-02-04T12:58:16.495Z
 tags: linux, shell, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
@@ -65,4 +65,14 @@ service ssh restart
 
 // debian系统
 /etc/init.d/ssh restart
+ ```
+ 
+ ### 配置`SSH`服务
+ 通过`~/.ssh/config`文件配置SSH服务。格式如下：
+ ```bash
+Host wifi
+Hostname 192.168.1.111
+User root
+Port 22
+IdentityFile ~/.ssh/keys/dsl.key
  ```
