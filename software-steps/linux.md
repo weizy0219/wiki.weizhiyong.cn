@@ -2,9 +2,9 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-04T12:58:16.495Z
-tags: linux, shell, 系统运维, 软件使用
-editor: markdown
+date: 2021-02-04T12:58:21.867Z
+tags: 
+editor: undefined
 dateCreated: 2021-02-04T04:16:07.771Z
 ---
 
