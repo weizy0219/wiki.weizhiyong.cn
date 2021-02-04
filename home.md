@@ -1,10 +1,10 @@
 ---
-title: 1. 首页
+title: 首页
 description: 魏智勇的维基百科网站
 published: true
-date: 2021-02-04T12:12:09.423Z
-tags: 
-editor: undefined
+date: 2021-02-04T12:42:36.400Z
+tags: linux, macos, windows, 开源项目, 操作系统, 数据库, 清单, 编程语言, 网络, 软件使用, 问题
+editor: markdown
 dateCreated: 2021-02-03T02:44:38.337Z
 ---
 
