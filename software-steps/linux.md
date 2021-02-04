@@ -2,9 +2,9 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-04T07:15:37.499Z
-tags: 
-editor: undefined
+date: 2021-02-04T12:54:45.645Z
+tags: linux, shell, 系统运维, 软件使用
+editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
 ---
 
@@ -30,3 +30,39 @@ x | 解压缩
 c | 压缩（z和x区分压缩和解压）
 v | 压缩的过程中显示文件
 f | 使用档名,f之后要直接接文档名
+
+## `SSH`加密通道通讯(Secure Shell)
+
+### 生成`SSH`密钥
+
+以指定邮箱生成密钥对。
+```bash
+ssh-keygen -t rsa -C "your_email@example.com"
+
+//默认的公钥和密钥存储在以下目录
+~/.ssh/id_rsa.pub
+~/.ssh/id_rsa.
+```
+### 复制密钥到远程主机
+
+```bash
+ssh-copy-id -p 1234 user@<host>
+```
+-p 1234 为通过1234连接。也可以通过 -i 指定密钥文件。
+复制密钥（公钥）到远程主机之后就可以免密登录
+
+### 通过SSH连接主机
+```bash
+ssh -p 2222 user@<host>
+```
+-p 2222 为通过2222端口连接
+
+### 重启ssh服务
+
+```bash
+// ubuntu系统
+service ssh restart
+
+// debian系统
+/etc/init.d/ssh restart
+ ```
