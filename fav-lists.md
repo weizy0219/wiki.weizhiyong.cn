@@ -2,9 +2,9 @@
 title: 4.常用清单查询
 description: 常用开源项目等清单保存
 published: true
-date: 2021-02-04T12:46:01.158Z
-tags: 
-editor: undefined
+date: 2021-02-05T07:47:38.069Z
+tags: 清单
+editor: markdown
 dateCreated: 2021-02-03T06:26:49.803Z
 ---
 
@@ -32,6 +32,7 @@ dateCreated: 2021-02-03T06:26:49.803Z
 ## 书籍教程
 - [Mongoose在线教程](https://wohugb.gitbooks.io/mongoose/content/)
 - [Docker从入门到实践](https://yeasy.gitbook.io/docker_practice/)
+- [mysql(5.7)中文文档](https://www.docs4dev.com/docs/zh/mysql/5.7/reference)
 
 ## 常用网站
 - [搬瓦工](https://bwh1.net/index.php) VPS服务商
