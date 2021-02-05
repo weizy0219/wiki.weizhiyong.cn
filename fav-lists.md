@@ -2,7 +2,7 @@
 title: 4.常用清单查询
 description: 常用开源项目等清单保存
 published: true
-date: 2021-02-05T08:30:49.652Z
+date: 2021-02-05T14:18:15.866Z
 tags: 清单
 editor: markdown
 dateCreated: 2021-02-03T06:26:49.803Z
@@ -36,6 +36,9 @@ dateCreated: 2021-02-03T06:26:49.803Z
 - [mysql(5.7)中文文档](https://www.docs4dev.com/docs/zh/mysql/5.7/reference)
 
 ## 常用网站
+
+### VPS主机
 - [搬瓦工](https://bwh1.net/index.php) VPS服务商
+- [pacificrack](https://pacificrack.com/)
 
 
