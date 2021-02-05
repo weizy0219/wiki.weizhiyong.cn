@@ -2,7 +2,7 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-05T14:07:27.404Z
+date: 2021-02-05T14:16:12.523Z
 tags: linux, shell, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
@@ -60,6 +60,20 @@ x | 解压缩
 c | 压缩（z和x区分压缩和解压）
 v | 压缩的过程中显示文件
 f | 使用档名,f之后要直接接文档名
+
+## `SCP`跨主机复制文件
+
+从SRC_HOST复制文件或目录到DEST_HOST
+```bash
+scp [OPTION] [user@]SRC_HOST:]file1 [user@]DEST_HOST:]file2
+```
+【OPTIONS】参数名称|含义
+---|---
+-P|指定远程主机ssh端口（ssh命令是小写p，这里是大写）
+-p|保留文件修改和访问时间。
+-q|如果要禁止显示进度表和非错误消息，请使用此选项。
+-C|此选项将强制scp在将数据发送到目标计算机时对其进行压缩。
+-r|此选项将告诉scp递归复制目录。
 
 ## `SSH`加密通道通讯(Secure Shell)
 
@@ -146,6 +160,8 @@ chroot_local_user=YES
 chroot_list_enable=NO
 #如果上一个选项为YES，则需要新建以下文件并在其中列出例外的用户名
 chroot_list_file=/etc/vsftpd.chroot_list
+#欢迎信息
+ftpd_banner=Welcome, Visit www.weizhiyong.com for more info.
 ```
 
 - 自定义配置项
