@@ -2,7 +2,7 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-05T14:16:12.523Z
+date: 2021-02-05T14:24:16.066Z
 tags: linux, shell, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
@@ -38,6 +38,22 @@ id username
 需要注意，下面的`uid`是前一步用`id`命令获取的用户uid
 ```bash
 usermod -d /usr/newfolder -u uid username
+```
+## `ufw`防火墙
+
+```bash
+# 允许端口或端口范围
+sudo ufw allow 20:21/tcp
+sudo ufw allow 30000:31000/tcp
+# 允许服务
+sudo ufw allow OpenSSH
+#通过禁用和重新启用UFW重新加载UFW规则：
+sudo ufw disable
+sudo ufw enable
+```
+要验证更改，请运行：
+```bash
+sudo ufw status
 ```
 
 ## `tar`压缩和解压
