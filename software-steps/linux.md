@@ -2,7 +2,7 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-05T14:24:16.066Z
+date: 2021-02-05T14:38:58.638Z
 tags: linux, shell, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
@@ -187,5 +187,10 @@ listen_port=6666   #修改ftp端口为6666
 local_root=/ftp    #配置本地用户主ftp目录
 allow_writeable_chroot=YES #如果root目录为可写，需要配置此项，否则会出现500/501错误
 utf8_filesystem=YES #设置utf8编码
+
+#使能被动模式并指定被动模式端口
+pasv_enable=YES
+pasv_max_port=21020
+pasv_min_port=21001
 ```
 
