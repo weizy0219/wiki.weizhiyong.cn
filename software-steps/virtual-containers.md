@@ -2,9 +2,9 @@
 title: 容器技术
 description: Docker为主的容器技术
 published: true
-date: 2021-02-04T12:10:52.231Z
-tags: 
-editor: undefined
+date: 2021-02-05T05:07:25.786Z
+tags: docker, 容器, 系统运维, 软件使用
+editor: markdown
 dateCreated: 2021-02-03T12:22:34.981Z
 ---
 
@@ -46,6 +46,14 @@ docker volume rm my-vol
 //清理数据卷
 docker volume prune
 ```
+
+- 从镜像中拷出拷入文件的操作
+```bash
+//镜像中往往没有编辑工具，因此需要对镜像中的文件进行拷入拷出操作
+docker container ls //列出镜像，需要针对镜像ID拷入拷出，例如
+docker cp 800aabc95413:/etc/mysql/mysql.cnf.d d:/Docker/dv/mysql.cnf.d
+docker cp  D:\Docker\dv\mysql.conf.d\mysqld.cnf 800aabc95413:/etc/mysql/mysql.conf.d/mysqld.cnf
+``
 ### 命令参数
 
 参数名称|意义|示例|备注
