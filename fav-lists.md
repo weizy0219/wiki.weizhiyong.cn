@@ -2,7 +2,7 @@
 title: 4.常用清单查询
 description: 常用开源项目等清单保存
 published: true
-date: 2021-02-05T07:47:38.069Z
+date: 2021-02-05T08:30:49.652Z
 tags: 清单
 editor: markdown
 dateCreated: 2021-02-03T06:26:49.803Z
@@ -17,6 +17,7 @@ dateCreated: 2021-02-03T06:26:49.803Z
 ## 在线资料速查
 
 - [菜鸟教程](https://www.runoob.com/):几乎各种技术教程都有一点
+- [Font Awesome中文网](http://www.fontawesome.com.cn/faicons/)：Font Awesome图标全集
 
 
 ## [开源项目](/fav-lists/opensource-projects)
