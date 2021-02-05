@@ -2,13 +2,13 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-05T13:27:26.267Z
+date: 2021-02-05T14:07:27.404Z
 tags: linux, shell, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
 ---
 
-# 命令行
+# linux常用操作（以Ubuntu为主）
 ## 用户管理
 
 - 添加用户`username`
@@ -21,11 +21,24 @@ sudo useradd -g vsftpd -d /share/vsftpd -m username
 -d|设置用户根目录
 -m|不建立默认根目录
 
-- 修改用户`username`的密码
-```sudo
-sudo passwd username
+- 删除用户
+```bash
+sudo userdel vsftpd
 ```
 
+- 修改用户`username`的密码
+```bash
+sudo passwd username
+```
+- 查看用户id
+```bash
+id username
+```
+- 修改用户主目录
+需要注意，下面的`uid`是前一步用`id`命令获取的用户uid
+```bash
+usermod -d /usr/newfolder -u uid username
+```
 
 ## `tar`压缩和解压
 
@@ -84,12 +97,63 @@ service ssh restart
 /etc/init.d/ssh restart
  ```
  
- ### 配置`SSH`服务
- 通过`~/.ssh/config`文件配置SSH服务。格式如下：
- ```bash
+### 配置`SSH`服务
+通过`~/.ssh/config`文件配置SSH服务。格式如下：
+```bash
 Host wifi
 Hostname 192.168.1.111
 User root
 Port 22
 IdentityFile ~/.ssh/keys/dsl.key
- ```
+```
+
+## 通过`vsftp`架设`ftp`服务器
+
+### 安装与删除`vsftp`
+```bash
+//安装
+sudo apt update 
+sudo apt install vsftpd
+//删除
+sudo apt-get remove --purge vsftpd
+sudo userdel vsftpd //同时删除为ftp新建的用户
+```
+### `vsftp`进程管理
+
+可以通过以下三种方式查看或管理`vsftp`进程
+```bash
+service vsftpd start|stop|restart|status
+systemctl start|stop|restart|status vsftpd
+/etc/init.d/vsftpd start|stop|restart|status|reload
+```
+
+### 配置文件及修改
+
+默认的配置文件目录`/etc/vsftpd.conf`。**修改该文件并重启服务以生效配置**
+默认的ftp目录 `srv/ftp`。
+
+- 常用配置项
+```bash
+#允许匿名用户登录，建议为NO
+anonymous_enable=NO
+#允许本机现有用户登录，可以配置为YES，并新增用户
+local_enable=YES
+#允许上传文件，应该为YES
+write_enable=YES
+#以下两个配置组合来确定是否允许本地用户切换到主目录之外
+#如下配置是禁止所有用户切换到主目录之外
+chroot_local_user=YES
+chroot_list_enable=NO
+#如果上一个选项为YES，则需要新建以下文件并在其中列出例外的用户名
+chroot_list_file=/etc/vsftpd.chroot_list
+```
+
+- 自定义配置项
+以下配置项在配置文件中没有，可以根据需要增加
+```bash
+listen_port=6666   #修改ftp端口为6666
+local_root=/ftp    #配置本地用户主ftp目录
+allow_writeable_chroot=YES #如果root目录为可写，需要配置此项，否则会出现500/501错误
+utf8_filesystem=YES #设置utf8编码
+```
+
