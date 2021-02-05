@@ -2,13 +2,30 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-04T12:58:21.867Z
-tags: 
-editor: undefined
+date: 2021-02-05T13:27:26.267Z
+tags: linux, shell, 系统运维, 软件使用
+editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
 ---
 
 # 命令行
+## 用户管理
+
+- 添加用户`username`
+```bash
+sudo useradd -g vsftpd -d /share/vsftpd -m username
+```
+参数名称|含义
+---|---
+-g|添加到用户组(`vsftpd`)
+-d|设置用户根目录
+-m|不建立默认根目录
+
+- 修改用户`username`的密码
+```sudo
+sudo passwd username
+```
+
 
 ## `tar`压缩和解压
 
