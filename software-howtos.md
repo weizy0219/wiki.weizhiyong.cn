@@ -2,7 +2,7 @@
 title: 2.计算机使用技巧
 description: 
 published: true
-date: 2021-02-06T07:17:50.291Z
+date: 2021-02-06T07:39:37.783Z
 tags: windows, 微软, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T03:36:17.562Z
@@ -27,6 +27,36 @@ dateCreated: 2021-02-03T03:36:17.562Z
 - 如果日期为估算，可以选中后方的估算框，日期栏中会出现问号标志。
 - 双击“自动计划”可以自动调节日期，在“前置任务”中输入前置任务标号，可以设置任务先后顺序和关系。
 
+## 将VScode添加至右键菜单
+如果在安装时没有选择将VSCode添加到右键菜单，也可以通过以下命令进行。
+- 1. 右击VScode快捷方式查看属性，找到快捷方式对应的目标路径
+
+![](https://img-blog.csdnimg.cn/20200101140653735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2thbmd5dXBs,size_16,color_FFFFFF,t_70)
+
+- 2. 随便找个地方新建个XXX.reg的注册表脚本文件，文件名叫啥都可以，但后缀名必须为.reg，然后在里面粘贴上下面的代码.
+**路径需要替换为你的Code的安装路径**.
+
+```reg
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\VSCode] ;右击文件时弹出的菜单
+@="Edit with Visual Studio Code" ;显示的文字
+"Icon"="D:\\Microsoft VS Code\\Code.exe" ;显示的图标
+
+[HKEY_CLASSES_ROOT\*\shell\VSCode\command] ;要执行的命令
+@="\"D:\\Microsoft VS Code\\Code.exe\" \"%1\"" ;具体的命令代码，%1代表第一个参数，即右击选中的那个文件的路径
+
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\VSCode] ;右击文件夹时弹出的菜单
+@="Open with Visual Studio Code"
+"Icon"="D:\\Microsoft VS Code\\Code.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\VSCode\command]
+@="\"D:\\Microsoft VS Code\\Code.exe\" \"%V\"" ;%V意思同%1，只不过在路径为空时替换为当前工作路径
+```
+粘贴完成后再将代码里的Code.exe路径替换为前面我们在属性里看的那个Code.exe路径，注意" \ “要转换为” \\ "
+- 3.保存文件，双击执行，一路选是，完成.
 
 ## HTML
 
