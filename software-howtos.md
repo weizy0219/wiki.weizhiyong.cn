@@ -2,13 +2,15 @@
 title: 2.计算机使用技巧
 description: 
 published: true
-date: 2021-02-04T12:09:51.604Z
-tags: 
-editor: undefined
+date: 2021-02-06T07:17:50.291Z
+tags: windows, 微软, 软件使用
+editor: markdown
 dateCreated: 2021-02-03T03:36:17.562Z
 ---
 
 # 计算机使用技巧
+
+## [C盘容量不够的解决办法](/software-howtos/windows-c-disk)
 
 ## MicroSoft Project
 
