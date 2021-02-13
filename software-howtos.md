@@ -2,7 +2,7 @@
 title: 2.计算机使用技巧
 description: 
 published: true
-date: 2021-02-06T07:39:37.783Z
+date: 2021-02-13T15:31:35.360Z
 tags: windows, 微软, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T03:36:17.562Z
@@ -11,6 +11,15 @@ dateCreated: 2021-02-03T03:36:17.562Z
 # 计算机使用技巧
 
 ## [C盘容量不够的解决办法](/software-howtos/windows-c-disk)
+## 笔记本方向键怎么使用才能当HOME、END
+
+Home：fn + ←
+
+End：fn + →
+
+PgUp：fn + ↑
+
+PgDn：fn + ↓
 
 ## MicroSoft Project
 
