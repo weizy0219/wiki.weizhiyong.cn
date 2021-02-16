@@ -2,13 +2,19 @@
 title: 容器技术
 description: Docker为主的容器技术
 published: true
-date: 2021-02-05T05:07:25.786Z
+date: 2021-02-16T13:36:38.450Z
 tags: docker, 容器, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T12:22:34.981Z
 ---
 
 # Docker容器技术
+## Docker 安装
+
+阿里云安装脚本。
+```bash
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
 
 ## Docker常用命令
 
