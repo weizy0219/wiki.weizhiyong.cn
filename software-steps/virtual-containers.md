@@ -2,7 +2,7 @@
 title: 容器技术
 description: Docker为主的容器技术
 published: true
-date: 2021-02-16T13:36:38.450Z
+date: 2021-02-16T13:41:53.892Z
 tags: docker, 容器, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T12:22:34.981Z
@@ -14,6 +14,21 @@ dateCreated: 2021-02-03T12:22:34.981Z
 阿里云安装脚本。
 ```bash
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
+
+## 配置镜像加速器
+针对Docker客户端版本大于 1.10.0 的用户
+
+您可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器
+```bash
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://xxxxxx.mirror.aliyuncs.com"]
+}
+EOF
+sudo systemctl daemon-reload
+sudo systemctl restart docker
 ```
 
 ## Docker常用命令
