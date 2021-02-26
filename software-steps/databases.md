@@ -2,7 +2,7 @@
 title: 数据库
 description: 数据库相关软件操作使用步骤
 published: true
-date: 2021-02-26T00:45:14.675Z
+date: 2021-02-26T00:48:50.667Z
 tags: 操作步骤, 数据库, 编程技巧, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T09:14:46.770Z
@@ -69,3 +69,49 @@ mongodb://mongodb0.example.com:27017,mongodb1.example.com:27017,mongodb2.example
 ```bash
 mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017,mongodb1.example.com:27017,mongodb2.example.com:27017/admin?replicaSet=myRepl
 ```
+## 管理用户并启用身份验证
+
+`MongoDB`安装完成后没有默认的用户，需要手动创建，在启用身份验证访问控制之前，我们可以先创建管理员，给管理员赋予`userAdmin` 或 `userAdminAnyDatabase` 角色，这样管理员就可以创建用户，授予或撤销用户角色，以及创建或修改定义角色。
+
+### 1.连接到mongodb创建管理员
+
+```javascript
+use admin
+db.createUser(
+     {
+       user:"ljzx",
+       pwd:"LENG********&7",
+       roles:[{role:"root",db:"admin"}]
+     }
+)
+```
+### 2.启动具有访问控制
+
+使用–auth命令行选项重新启动 mongod 实例。
+
+```bash
+./mongod --auth
+```
+### 3.使用用户名密码连接数据库
+
+```bash
+./mongo --port 27017 -u "ljzx" -p "abc***123" --authenticationDatabase "admin"
+```
+
+### 4.创建指定数据库的用户
+
+该用户只能访问该数据库，这样可以保证数据库的安全。
+
+```javascript
+use ljzxdb
+db.createUser(
+     {
+       user:"ljzxdb",
+       pwd:"LENG*****34&",
+       roles:[{role:"readWrite",db:"ljzxdb"}]
+     }
+)
+
+db.auth("ljzxdb","LENG*****34&")
+```
+这里我们为ljzxdb创建一个名为ljzxdb的用户。
