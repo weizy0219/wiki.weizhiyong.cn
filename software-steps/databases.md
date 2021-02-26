@@ -2,7 +2,7 @@
 title: 数据库
 description: 数据库相关软件操作使用步骤
 published: true
-date: 2021-02-26T00:48:50.667Z
+date: 2021-02-26T06:32:43.728Z
 tags: 操作步骤, 数据库, 编程技巧, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T09:14:46.770Z
@@ -85,13 +85,25 @@ db.createUser(
      }
 )
 ```
-### 2.启动具有访问控制
+### 2.启动具有访问控制，以及授权远程用户访问
 
 使用–auth命令行选项重新启动 mongod 实例。
 
 ```bash
 ./mongod --auth
 ```
+
+如果要默认启用访问控制，打开mongo配置文件`mongod.cfg`(windows系统在安装目录下，linux系统默认在`/etc/mongod.conf`下), 在`security`项下，将`authorization`设置为`enabled`, 默认是`disabled`。
+```text
+security:
+  authorization: enabled
+```
+mongodb默认禁止远程用户访问，如果要启用，在上述配置文件中，修改net选项下的bindIp为`0.0.0.0`。
+```text
+net:
+  port: 27017
+  bindIp: 127.0.0.1
+```  
 ### 3.使用用户名密码连接数据库
 
 ```bash
