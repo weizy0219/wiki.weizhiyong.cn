@@ -2,7 +2,7 @@
 title: 4.常用清单查询
 description: 常用开源项目等清单保存
 published: true
-date: 2021-02-06T13:38:15.722Z
+date: 2021-02-26T00:27:41.644Z
 tags: 清单
 editor: markdown
 dateCreated: 2021-02-03T06:26:49.803Z
@@ -13,6 +13,7 @@ dateCreated: 2021-02-03T06:26:49.803Z
 ## 编码和协议
 
 - [ASCII编码](/fav-lists/ascii-code)
+- [百分比编码表percent-encoding](/fav-lists/percent-encoding)
 
 ## 在线资料速查
 
