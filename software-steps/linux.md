@@ -2,7 +2,7 @@
 title: Linux
 description: Linux系统相关操作与命令
 published: true
-date: 2021-02-05T14:38:58.638Z
+date: 2021-02-26T13:20:07.391Z
 tags: linux, shell, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-04T04:16:07.771Z
@@ -194,3 +194,14 @@ pasv_max_port=21020
 pasv_min_port=21001
 ```
 
+## SCP远程复制文件
+语法
+```bash
+scp [-1246BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+[-l limit] [-o ssh_option] [-P port] [-S program]
+[[user@]host1:]file1 [...] [[user@]host2:]file2
+```
+简易写法:
+```bash
+scp [可选参数] file_source file_target 
+```
