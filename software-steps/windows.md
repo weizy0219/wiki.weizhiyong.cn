@@ -2,7 +2,7 @@
 title: windows
 description: windows 操作系统相关用法
 published: true
-date: 2021-02-16T09:23:21.201Z
+date: 2021-03-19T05:55:38.831Z
 tags: windows, 操作系统, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T10:10:13.010Z
@@ -56,6 +56,9 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 //设置WSL2为默认版本
 wsl --set-default-version 2
 
+//配置某个版本的Linux为WSL 2 (例如Ubuntu-18。04)
+wsl --set--version <Ubuntu-18.04> 2
+
 //设置默认的WSL系统Linux版本
 wsl -s <DistributionName>
 在Windows商店中搜索Linux（或Ubuntu）并进行安装，一般来说建议默认安装Ubuntu。
@@ -77,4 +80,14 @@ wsl --unregister <DistributionName>
 <DistributionName> config --default-user <Username>
 //停止所有正在运行的WSL子系统
 wsl --shutdown 
+```
+
+### 解决WSL2中Vmmem内存占用过大问题
+新建wsl配置文件 `%UserProfile%\.wslconfig` (可以cd到%UserProfile%\也就是用户主目录下新建该文件)。
+通过修改memory文件和swap值，修改存储限制。
+```bash
+[wsl2]
+memory=4GB
+swap=8GB
+localhostForwarding=true
 ```
