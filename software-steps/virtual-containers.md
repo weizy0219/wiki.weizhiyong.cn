@@ -2,7 +2,7 @@
 title: 容器技术
 description: Docker为主的容器技术
 published: true
-date: 2021-03-19T04:08:23.420Z
+date: 2021-03-19T06:02:36.337Z
 tags: docker, 容器, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T12:22:34.981Z
@@ -155,4 +155,10 @@ docker run -it `
 -v D:\docker\mqtt\data:/mosquitto/data `
 -v D:\docker\mqtt\log:/mosquitto/log `
 eclipse-mosquitto
+```
+
+### 7. 安装运行rabbitmq
+以下为官方示例，注意，`--rm`参数会在容器退出时自动清理，即自动销毁容器，如果需要持久保持容器，可以去掉`--rm`参数。
+```bash
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
