@@ -2,7 +2,7 @@
 title: 容器技术
 description: Docker为主的容器技术
 published: true
-date: 2021-02-16T13:41:53.892Z
+date: 2021-03-19T04:08:23.420Z
 tags: docker, 容器, 系统运维, 软件使用
 editor: markdown
 dateCreated: 2021-02-03T12:22:34.981Z
@@ -147,4 +147,12 @@ docker run -it --rm `
     -e ME_CONFIG_BASICAUTH_PASSWORD="fairlypassword" `
     mongo-express
 ```
-
+### 6. 安装运行mqtt(mosquitto)
+```bash
+docker run -it `
+-p 1883:1883 -p 9001:9001 `
+-v D:\docker\mqtt\conf:/mosquitto/config `
+-v D:\docker\mqtt\data:/mosquitto/data `
+-v D:\docker\mqtt\log:/mosquitto/log `
+eclipse-mosquitto
+```
